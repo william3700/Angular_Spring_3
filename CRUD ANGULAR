@@ -1,0 +1,78 @@
+YouTube => https://www.youtube.com/watch?v=cqbteQM9T_c
+
+************* ANGULAR SERVICE (TareaService) ********************
+
+constructor(private http:HttpClient){}
+
+getAll(){
+  return this.http.get("http://localhost:8080/leer"); 
+}
+
+create(tarea:any){
+  return this.http.post("http://localhost:8080/crear",tarea); 
+}
+
+update(id:number,tarea:any){
+  return this.http.put("http://localhost:8080/actualizar/"+id,tarea);
+}
+
+delete(id:number){
+  return this.http.delete("http://localhost:8080/borrar/"+id); 
+}
+
+************* ANGULAR COMPONENTE tarea.component.ts ****************
+
+tareasP: any[]=[];
+
+formulario:FormGroup=this.fb.group({
+   nombre:[],
+   completado:[false]
+});
+
+tareaEnEdicion:any;
+
+constructor(
+    private tareaService: TareaService,
+    private fb:formBuilder
+){}
+
+ngOnInit():void{
+   this.getAllp();
+}
+
+getAllp(){
+  this.tareaService.getAll().subscribe((respuesta:any)=>{
+       this.tareasP=respuesta;
+     }
+  )
+}
+
+save(){
+   const values=this.formulario.value;
+   this.tareaService.create(values).subscribe(()=>{
+       this.getAllp();
+     }
+   )
+}
+
+delete(id:number){
+  this.tareaService.delete(id).subscribe(()=>{
+        this.getAllp();
+     }
+   )
+}
+
+editar(tarea:any){
+  this.tareaEnEdicion=tarea;
+  this.formulario.setValue({
+     nombre:tarea.nombre,
+     completado:tarea.completado
+  })
+  
+  this.tareaService.update(id,this.tareaEnEdicion).subscribe(()=>{
+        this.getAllp();
+     }
+   )
+  
+}
+

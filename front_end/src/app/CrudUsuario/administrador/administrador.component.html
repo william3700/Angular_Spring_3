@@ -1,0 +1,56 @@
+<hr>
+<div class="container">
+    <h4>Módulo de Administración</h4>
+</div>
+
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <div class="text-end">
+        <button (click)="salir()" class="btn btn-success">Salir</button>
+     </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
+          <div class="card  border-secondary mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Registro de usuarios</h5>
+              <p class="card-text">Los registros de usuarios contienen nombres de usuarios, contraseñas y perfiles de seguridad que determinan las aplicaciones, opciones y datos a los que puede acceder un usuario. Cuando crea un registro de usuario, debe crear también un registro de persona.</p>
+              <hr>
+              <div class="text-end">
+                <button (click)="registrarUsu()" class="btn btn-primary">Ir al módulo</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card border-secondary mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Listado de usuarios registrados</h5>
+              <p class="card-text">A los usuarios de base de datos se le concede acceso para leer, insertar, actualizar y suprimir objetos específicos que definen un conjunto de campos y reglas de negocio. Estos objetos también pueden actualizar una o más tablas de base de datos.</p>
+              <hr>
+              <div class="text-end">
+                <button (click)="agregarUsu()" class="btn btn-primary">Ir al módulo</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card border-secondary mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Registro Servicios públicos</h5>
+              <p class="card-text">Los servicios públicos de suministro (agua, electricidad y gas) son fundamentales y desempeñan un papel esencial en el desarrollo económico y social.</p>
+              <hr>
+              <div class="text-end">
+                <button class="btn btn-primary">Ir al módulo</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+

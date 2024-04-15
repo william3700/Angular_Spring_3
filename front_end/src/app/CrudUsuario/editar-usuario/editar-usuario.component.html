@@ -1,0 +1,35 @@
+<br/>
+<div class="container">
+    <h4>Módulo de edición</h4>
+</div>
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <form [formGroup]="formulario" (ngSubmit)="actualizar()">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" formControlName='nombre' name="nombre" value="{{nombre1}}" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail12" class="form-label">Apellido</label>
+                    <input type="text" class="form-control" id="exampleInputEmail12" formControlName='apellido' name="apellido" value="{{apellido1}}" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail13" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail13" formControlName='correo' name="correo" value="{{correo1}}" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" formControlName='contrasenia' name="contrasenia" value="{{contrasenia1}}">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword11" class="form-label">Verificar Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword11" value={{contrasenia1}}>
+                </div>
+                <button type="submit" class="btn btn-primary">Actualizar</button>
+                <button type="button" (click)="encontrar()" class="btn btn-danger">Recargar</button>
+            </form>
+        </div>
+      </div>
+      
+</div>
